@@ -7,6 +7,10 @@ import java.io.InputStream;
 public class Sound {
 
 	private static String def = "";
+	
+	public static void setDefaultLoadingDirectory(String path) {
+		def = path;
+	}
 
 	public static void play(String url) {
 		try {
