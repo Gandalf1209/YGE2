@@ -4,21 +4,6 @@
 
 Yamanu Game Engine is a free and open source Java game engine. It is mainly used for 2D games
 
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
 ### Why the update to 2.0 already? ###
 
 I realized all of the problems with the original Yamanu, and knew that it was started off wrong, and there was no way to fix it. I decided to create a whole new Yamanu, but this time, make sure everything is more flexible and built the right way.
