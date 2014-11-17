@@ -19,7 +19,7 @@ public class Util {
 		return new String(ft.format(dNow));
 	}
 	
-	public String getTime() {
+	public static String getTime() {
 		Date dNow = new Date();
 		SimpleDateFormat ft = new SimpleDateFormat("hh:mm:ss");
 		return new String(ft.format(dNow));
