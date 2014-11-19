@@ -10,6 +10,11 @@ public class Vector2 {
 		this.y = y;
 	}
 	
+	public void translate(int x, int y) {
+		this.x += x;
+		this.y += y;
+	}
+	
 	public String toString() {
 		return "(" + x + ", " + y + ")";
 	}

@@ -31,4 +31,8 @@ public class Util {
 		return JOptionPane.showInputDialog(message);
 	}
 	
+	public static void showMessage(String message) {
+		JOptionPane.showMessageDialog(null, message);
+	}
+	
 }
