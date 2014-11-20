@@ -1,12 +1,19 @@
 package com.gandalf1209.yge2.graphics;
 
-import com.gandalf1209.yge2.engine.*;
-
-import javax.swing.*;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JComponent;
+import javax.swing.Timer;
+
+import com.gandalf1209.yge2.engine.Game;
+import com.gandalf1209.yge2.engine.Mesh;
+import com.gandalf1209.yge2.engine.Scene;
 
 @SuppressWarnings("serial")
 public class Display extends JComponent implements ActionListener {
@@ -29,6 +36,18 @@ public class Display extends JComponent implements ActionListener {
 	public void initTime(int time) {
 		t = new Timer(time, this);
 		t.start();
+	}
+	
+	public void keyListener(KeyListener kl) {
+		frame.addKeyListener(kl);
+	}
+	
+	public void mouseListener(MouseListener ml) {
+		frame.addMouseListener(ml);
+	}
+	
+	public void mouseMotionListener(MouseMotionListener mml) {
+		frame.addMouseMotionListener(mml);
 	}
 
 	public void loadScene(Scene s) {
