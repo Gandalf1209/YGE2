@@ -22,6 +22,10 @@ public class Mesh {
 		this.h = h;
 	}
 
+	/**
+	 * Sets the image to be drawn on the mesh
+	 * @param url
+	 */
 	public void setMaterial(String url) {
 		material = new GraphicsLoader().loadGraphic(url);
 	}

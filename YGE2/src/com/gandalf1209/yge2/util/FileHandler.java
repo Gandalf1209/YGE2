@@ -6,6 +6,11 @@ import java.io.FileReader;
 
 public class FileHandler {
 
+	/**
+	 * Returns the contents of a text file (or any file with readable text)
+	 * @param loc
+	 * @return
+	 */
 	public static String getContents(String loc) {
 		StringBuilder sb = new StringBuilder();
 		File f = new File(loc);

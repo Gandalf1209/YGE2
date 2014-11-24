@@ -31,31 +31,65 @@ public class Display extends JComponent implements ActionListener {
 		this.frame = new Window(title, x, y, this);
 	}
 
+	/**
+	 * Returns the Window the Display is attached to
+	 * @return
+	 */
 	public Window getWindow() {
 		return frame;
 	}
 
+	/**
+	 * Starts the loop with a specified delay between frames.
+	 * @param time
+	 */
 	public void initTime(int time) {
 		t = new Timer(time, this);
 		t.start();
 	}
 	
+	/**
+	 * Stops the loop
+	 */
+	public void stopTime() {
+		t.stop();
+	}
+	
+	/**
+	 * Adds a KeyListener to the Window
+	 * @param kl
+	 */
 	public void keyListener(KeyListener kl) {
 		frame.addKeyListener(kl);
 	}
 	
+	/**
+	 * Adds a MouseListener to the Window
+	 * @param ml
+	 */
 	public void mouseListener(MouseListener ml) {
 		frame.addMouseListener(ml);
 	}
 	
+	/**
+	 * Adds a MouseMotionListener to the Window
+	 * @param mml
+	 */
 	public void mouseMotionListener(MouseMotionListener mml) {
 		frame.addMouseMotionListener(mml);
 	}
 
+	/**
+	 * Sets the scene to be displayed in Window
+	 * @param s
+	 */
 	public void loadScene(Scene s) {
 		this.s = s;
 	}
 
+	/**
+	 * Draws everything it needs to
+	 */
 	protected void paintComponent(Graphics g) {
 		Vector2.verteces.clear();
 		GraphicsX gx = new GraphicsX(g, frame);
@@ -67,7 +101,6 @@ public class Display extends JComponent implements ActionListener {
 		}
 		game.render(gx);
 	}
-
 	private void renderMesh(GraphicsX g) {
 		for (int i = 0; i < s.meshes.size(); i++) {
 			Mesh m = s.meshes.get(i);
@@ -83,6 +116,9 @@ public class Display extends JComponent implements ActionListener {
 		return g;
 	}
 
+	/**
+	 * What is run when the timer is active
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 

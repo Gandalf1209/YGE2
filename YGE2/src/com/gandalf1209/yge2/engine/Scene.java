@@ -17,15 +17,27 @@ public class Scene {
 		scenes.add(this);
 	}
 
+	/**
+	 * Updates the current scene's data
+	 */
 	private void update() {
 		scenes.set(this.place, this);
 	}
 
+	/**
+	 * Adds a mesh to be drawn in the scene
+	 * @param mesh
+	 */
 	public void add(Mesh mesh) {
 		meshes.add(mesh);
 		update();
 	}
 
+	/**
+	 * Returns the scene by it's name
+	 * @param name
+	 * @return
+	 */
 	public static Scene getSceneByName(String name) {
 		Scene s = null;
 		for (int i = 0; i < scenes.size(); i++) {

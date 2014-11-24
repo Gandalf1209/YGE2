@@ -14,10 +14,21 @@ public class Source {
 
 	private static String error = "Yamanu Source Error: ";
 
+	/**
+	 * Binds a display to the Source. Needed for any window/display
+	 * commands
+	 * @param d
+	 */
 	public static void bind(Display d) {
 		Source.d = d;
 	}
 
+	/**
+	 * Runs given commands. See the Source documentation for more
+	 * information
+	 * @param command
+	 * @return
+	 */
 	public static Object run(String command) {
 		Object o = null;
 		String[] args = command.split(" ");
@@ -86,6 +97,13 @@ public class Source {
 					o = Vector2.verteces.size();
 				} else if (args[2].equalsIgnoreCase("clear")) {
 					Vector2.verteces.clear();
+				} else if (args[2].equalsIgnoreCase("translate")) {
+					for (int i = 0; i < Vector2.verteces.size(); i++) {
+						Vector2 v = Vector2.verteces.get(i);
+						if (v != null) {
+							v.translate(Integer.parseInt(args[3]), Integer.parseInt(args[4]));
+						}
+					}
 				}
 				else {
 					System.out.println("Invalid engine.vertex argument '" + args[2] + "'");
@@ -101,6 +119,10 @@ public class Source {
 		return o;
 	}
 
+	/**
+	 * Runs commands from a file
+	 * @param file
+	 */
 	public static void file(String file) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));
@@ -132,6 +154,10 @@ public class Source {
 		}
 	}
 
+	/**
+	 * Runs commands from a file
+	 * @param file
+	 */
 	public static void file(File file) {
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(file));

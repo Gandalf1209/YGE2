@@ -7,6 +7,11 @@ public class GraphicsLoader {
 
 	private String def = "";
 
+	/**
+	 * Loads an image and returns that image
+	 * @param path
+	 * @return
+	 */
 	public BufferedImage loadGraphic(String path) {
 		BufferedImage b = null;
 		try {
@@ -18,6 +23,10 @@ public class GraphicsLoader {
 		return b;
 	}
 
+	/**
+	 * Sets the location for all images to be loaded from
+	 * @param path
+	 */
 	public void setDefaultLoadingDirectory(String path) {
 		def = path;
 	}

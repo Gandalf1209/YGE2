@@ -16,11 +16,19 @@ public class Vector2 {
 		verteces.add(this);
 	}
 	
+	/**
+	 * Translates the current Vector2
+	 * @param x
+	 * @param y
+	 */
 	public void translate(int x, int y) {
 		this.x += x;
 		this.y += y;
 	}
 	
+	/**
+	 * Returns the coordinate value in a String
+	 */
 	public String toString() {
 		return "(" + x + ", " + y + ")";
 	}

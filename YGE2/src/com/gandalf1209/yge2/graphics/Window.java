@@ -7,6 +7,13 @@ import java.awt.*;
 @SuppressWarnings("serial")
 public class Window extends JFrame {
 
+	/**
+	 * Creates a new Window with a component attached
+	 * @param title
+	 * @param x
+	 * @param y
+	 * @param c
+	 */
 	public Window(String title, int x, int y, Component c) {
 		this.add(c);
 		this.pack();
@@ -22,6 +29,12 @@ public class Window extends JFrame {
 		this.setVisible(true);
 	}
 
+	/**
+	 * Creates a new Window without a component attached
+	 * @param title
+	 * @param x
+	 * @param y
+	 */
 	public Window(String title, int x, int y) {
 		this.setTitle(title);
 		this.setSize(x, y);
