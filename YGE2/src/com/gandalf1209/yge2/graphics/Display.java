@@ -14,6 +14,7 @@ import javax.swing.Timer;
 import com.gandalf1209.yge2.engine.Game;
 import com.gandalf1209.yge2.engine.Mesh;
 import com.gandalf1209.yge2.engine.Scene;
+import com.gandalf1209.yge2.engine.Vector2;
 
 @SuppressWarnings("serial")
 public class Display extends JComponent implements ActionListener {
@@ -23,6 +24,7 @@ public class Display extends JComponent implements ActionListener {
 	private Game game;
 	private Timer t;
 	private Scene s;
+	private GraphicsX g;
 
 	public Display(String title, int x, int y, Game game) {
 		this.game = game;
@@ -55,7 +57,9 @@ public class Display extends JComponent implements ActionListener {
 	}
 
 	protected void paintComponent(Graphics g) {
+		Vector2.verteces.clear();
 		GraphicsX gx = new GraphicsX(g, frame);
+		this.g = gx;
 		gx.setColor(Color.black);
 		gx.fillRect(0, 0, frame.getWidth(), frame.getHeight());
 		if (s != null) {
@@ -73,6 +77,10 @@ public class Display extends JComponent implements ActionListener {
 				g.addImage(m.getMaterial(), m.getX(), m.getY(), m.getW(), m.getH());
 			}
 		}
+	}
+	
+	public GraphicsX getGraphics() {
+		return g;
 	}
 
 	@Override

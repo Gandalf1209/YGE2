@@ -52,6 +52,8 @@ public class Keys {
 	public static int SHIFT = 16;
 	public static int CONTROL = 17;
 	public static int ALT = 18;
+	public static int SLASH = 191;
+	public static int BACK_SLASH = 220;
 
 	public static int F1 = 112;
 	public static int F2 = 113;

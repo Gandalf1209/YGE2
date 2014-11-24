@@ -11,9 +11,7 @@ public class Window extends JFrame {
 		this.add(c);
 		this.pack();
 		this.setTitle(title);
-		this.setMinimumSize(new Dimension(x, y));
-		this.setMaximumSize(new Dimension(x, y));
-		this.setPreferredSize(new Dimension(x, y));
+		this.setSize(x, y);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(Window.EXIT_ON_CLOSE);
 		try {
@@ -26,9 +24,7 @@ public class Window extends JFrame {
 
 	public Window(String title, int x, int y) {
 		this.setTitle(title);
-		this.setMinimumSize(new Dimension(x, y));
-		this.setMaximumSize(new Dimension(x, y));
-		this.setPreferredSize(new Dimension(x, y));
+		this.setSize(x, y);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(Window.EXIT_ON_CLOSE);
 		try {

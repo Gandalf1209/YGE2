@@ -14,7 +14,7 @@ public class GraphicsX extends Graphics {
 	public boolean DRAW_3D_BORDER = false;
 	public int OVERALL_SHADOW_OFFSET = 20;
 	public int RECT_DEPTH_OFFSET = 3;
-
+	
 	public GraphicsX(Graphics g, com.gandalf1209.yge2.graphics.Window w) {
 		this.g = g;
 		this.w = w;
@@ -37,6 +37,9 @@ public class GraphicsX extends Graphics {
 
 	public void addImage(Image img, Vector2 p, int width, int height) {
 		addImage(img, p.getX(), p.getY(), width, height);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
 	}
 	
 	@SuppressWarnings("unused")
@@ -66,6 +69,10 @@ public class GraphicsX extends Graphics {
 
 	public void addImage(Image image, int x, int y, int width, int height) {
 		this.drawImage(image, x, y, width, height, null);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
 	}
 
 	public void drawTriangle(Vector2 p1, Vector2 p2, Vector2 p3) {
@@ -159,6 +166,15 @@ public class GraphicsX extends Graphics {
 	    this.g.setColor(Color.black);
 	    if (this.DRAW_3D_BORDER)
 	      this.g.drawPolygon(side);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void fill3DRect(int x, int y, int w, int h, int offset)
@@ -232,6 +248,15 @@ public class GraphicsX extends Graphics {
 	    this.g.setColor(Color.black);
 	    if (this.DRAW_3D_BORDER)
 	      this.g.drawPolygon(side);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void drawTriangle(int x, int y, int b, int h)
@@ -240,6 +265,10 @@ public class GraphicsX extends Graphics {
 	    int[] m = { y, y - h, y };
 	    Polygon p = new Polygon(n, m, 3);
 	    this.g.drawPolygon(p);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void drawTriangle(int a, int b, int c, int d, int e, int f) {
@@ -247,6 +276,10 @@ public class GraphicsX extends Graphics {
 	    int[] y = { b, d, f };
 	    Polygon p = new Polygon(x, y, 3);
 	    this.g.drawPolygon(p);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void fillTriangle(int a, int b, int c, int d, int e, int f) {
@@ -254,6 +287,10 @@ public class GraphicsX extends Graphics {
 	    int[] y = { b, d, f };
 	    Polygon p = new Polygon(x, y, 3);
 	    this.g.fillPolygon(p);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void fillTriangle(int x, int y, int b, int h) {
@@ -261,6 +298,10 @@ public class GraphicsX extends Graphics {
 	    int[] m = { y, y - h, y };
 	    Polygon p = new Polygon(n, m, 3);
 	    this.g.fillPolygon(p);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void fillCylinder(int x, int y, int w, int h) {
@@ -404,6 +445,12 @@ public class GraphicsX extends Graphics {
 	      drawTriangle(x + w - w / 5, y, x + w / 2 - w / 10, y - h, x + w - w / 10, y - h / 10);
 	    }
 	    this.g.setColor(fill);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void fillPyramid(int x, int y, int w, int h, int offset) {
@@ -438,11 +485,23 @@ public class GraphicsX extends Graphics {
 	      drawTriangle(x + w - w / 5, y, x + w / 2 - w / 10, y - h, x + w - w / 10, y - h / 10);
 	    }
 	    this.g.setColor(fill);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	  public void drawPyramid(int x, int y, int w, int h) {
 	    drawTriangle(x, y, w - w / 5, h);
 	    drawTriangle(x + w - w / 5, y, x + w / 2 - w / 10, y - h, x + w - w / 10, y - h / 10);
+	    
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
+	    Vector2.verteces.add(null);
 	  }
 
 	/*
@@ -529,11 +588,17 @@ public class GraphicsX extends Graphics {
 	@Override
 	public void drawLine(int x1, int y1, int x2, int y2) {
 		g.drawLine(x1, y1, x2, y2);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
 	}
 
 	@Override
 	public void fillRect(int x, int y, int width, int height) {
 		g.fillRect(x, y, width, height);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
+		Vector2.verteces.add(null);
 	}
 
 	@Override
@@ -579,11 +644,17 @@ public class GraphicsX extends Graphics {
 	@Override
 	public void drawPolygon(int[] xPoints, int[] yPoints, int nPoints) {
 		g.drawPolyline(xPoints, yPoints, nPoints);
+		for (int i = 0; i < nPoints; i++) {
+			Vector2.verteces.add(null);
+		}
 	}
 
 	@Override
 	public void fillPolygon(int[] xPoints, int[] yPoints, int nPoints) {
 		g.fillPolygon(xPoints, yPoints, nPoints);
+		for (int i = 0; i < nPoints; i++) {
+			Vector2.verteces.add(null);
+		}
 	}
 
 	@Override
