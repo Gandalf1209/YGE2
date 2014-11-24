@@ -27,6 +27,14 @@ public class Util {
 		return new String(ft.format(dNow));
 	}
 	
+	public static String getJarLocation(String jarName) {
+		String temp = Util.class.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+		String[] tempDir = temp.split("Server.jar");
+		String temp2 = tempDir[0];
+		String mainDir = temp2.replace("%20", " ");
+		return mainDir;
+	}
+	
 	public static String getInput(String message) {
 		return JOptionPane.showInputDialog(message);
 	}
