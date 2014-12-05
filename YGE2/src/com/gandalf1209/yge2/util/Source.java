@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
+import com.gandalf1209.yge2.engine.Mathf;
 import com.gandalf1209.yge2.engine.Vector2;
 import com.gandalf1209.yge2.graphics.Display;
 
@@ -106,7 +107,23 @@ public class Source {
 					}
 				}
 				else {
-					System.out.println("Invalid engine.vertex argument '" + args[2] + "'");
+					System.out.println(error + "Invalid engine.vertex argument '" + args[2] + "'");
+				}
+			} else if (args[1].equalsIgnoreCase("math")) {
+				if (args[2].equalsIgnoreCase("random")) {
+					o = Mathf.random(Integer.parseInt(args[3]), Integer.parseInt(args[4]));
+				} else if (args[2].equalsIgnoreCase("exp")) {
+					o = (int)Math.pow(Integer.parseInt(args[3]), Integer.parseInt(args[4]));
+				} else if (args[2].equalsIgnoreCase("path")) {
+					o = (int)Mathf.path(Integer.parseInt(args[3]), Integer.parseInt(args[4]));
+				} else if (args[2].equalsIgnoreCase("distance")) {
+					o = (int)Mathf.distance(new Vector2(Integer.parseInt(args[3]),
+														Integer.parseInt(args[4])), 
+											new Vector2(Integer.parseInt(args[5]),
+														Integer.parseInt(args[6])));
+				}
+				else {
+					System.out.println(error + "Invalid engine.math argument '" + args[2] + "'");
 				}
 			}
 			else {

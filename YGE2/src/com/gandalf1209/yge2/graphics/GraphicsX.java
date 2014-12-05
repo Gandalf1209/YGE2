@@ -19,6 +19,10 @@ public class GraphicsX extends Graphics {
 		this.g = g;
 		this.w = w;
 	}
+	
+	public void drawLine(Vector2 v1, Vector2 v2) {
+		g.drawLine(v1.getX(), v1.getY(), v2.getX(), v2.getY());
+	}
 
 	public void drawPixel(Vector2 p) {	
 		g.fillRect(p.getX(), p.getY(), 1, 1);
