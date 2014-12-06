@@ -1,7 +1,9 @@
 package com.gandalf1209.yge2.graphics;
 
-import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
 
 public class GraphicsLoader {
 
@@ -16,6 +18,22 @@ public class GraphicsLoader {
 		BufferedImage b = null;
 		try {
 			b = ImageIO.read(getClass().getResourceAsStream(def + path));
+		} catch (Exception e) {
+			System.out.println("Error loading graphics from: " + (def + path));
+			System.out.println(e.getMessage() + ", " + e.getCause());
+		}
+		return b;
+	}
+	
+	/**
+	 * Loads an image that is not from the source folder and returns it
+	 * @param path
+	 * @return
+	 */
+	public BufferedImage loadExternalGraphic(String path) {
+		BufferedImage b = null;
+		try {
+			b = ImageIO.read(new File(def + path));
 		} catch (Exception e) {
 			System.out.println("Error loading graphics from: " + (def + path));
 			System.out.println(e.getMessage() + ", " + e.getCause());
