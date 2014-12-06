@@ -8,6 +8,10 @@ public class FileHandler {
 
 	public static String def = "";
 	
+	/**
+	 * Sets the directory to load the files from
+	 * @param url
+	 */
 	public static void setDefaultLoadingDirectory(String url) {
 		def = url;
 	}

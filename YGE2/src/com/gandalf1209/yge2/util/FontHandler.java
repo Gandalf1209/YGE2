@@ -8,10 +8,18 @@ public class FontHandler {
 
 	private String def = "";
 	
+	/**
+	 * Sets the directory to load the font files from
+	 * @param url
+	 */
 	public void setDefaultLoadingDirectory(String url) {
 		def = url;
 	}
 	
+	/**
+	 * Loads font from source folder
+	 * @param url
+	 */
 	public void loadFont(String url) {
 		try {
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
@@ -21,6 +29,10 @@ public class FontHandler {
 		}
 	}
 	
+	/**
+	 * Loads external font from hard drive
+	 * @param url
+	 */
 	public void loadExternalFont(String url) {
 		try {
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
