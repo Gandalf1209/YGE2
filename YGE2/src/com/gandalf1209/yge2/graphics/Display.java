@@ -101,6 +101,8 @@ public class Display extends JComponent implements ActionListener {
 		}
 		game.render(gx);
 	}
+	
+	
 	private void renderMesh(GraphicsX g) {
 		for (int i = 0; i < s.meshes.size(); i++) {
 			Mesh m = s.meshes.get(i);

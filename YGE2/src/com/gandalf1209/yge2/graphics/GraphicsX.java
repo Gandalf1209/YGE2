@@ -1,10 +1,18 @@
 package com.gandalf1209.yge2.graphics;
 
-import com.gandalf1209.yge2.engine.Vector2;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Polygon;
+import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.image.ImageObserver;
 import java.text.AttributedCharacterIterator;
+
+import com.gandalf1209.yge2.engine.GameObject;
+import com.gandalf1209.yge2.engine.Vector2;
 
 public class GraphicsX extends Graphics {
 
@@ -18,6 +26,21 @@ public class GraphicsX extends Graphics {
 	public GraphicsX(Graphics g, com.gandalf1209.yge2.graphics.Window w) {
 		this.g = g;
 		this.w = w;
+	}
+	
+	public void drawGameObject(GameObject obj) {
+		Color prevColor = g.getColor();
+		Polygon p = new Polygon();
+		p.xpoints = obj.getXVerts();
+		p.ypoints = obj.getYVerts();
+		p.npoints = obj.getXVerts().length;
+		g.setColor(obj.getColor());
+		g.fillPolygon(p);
+		if (obj.DRAW_BORDER) {
+			g.setColor(obj.BORDER_COLOR);
+			g.drawPolygon(p);
+		}
+		g.setColor(prevColor);
 	}
 	
 	public void drawLine(Vector2 v1, Vector2 v2) {

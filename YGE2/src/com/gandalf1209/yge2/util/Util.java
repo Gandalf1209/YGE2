@@ -2,10 +2,14 @@ package com.gandalf1209.yge2.util;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JOptionPane;
 
 public class Util {
+	
+	private static boolean loading = false;
 	
 	/**
 	 * Returns the user's OS
@@ -72,6 +76,44 @@ public class Util {
 	 */
 	public static void showMessage(String message) {
 		JOptionPane.showMessageDialog(null, message);
+	}
+	
+	/**
+	 * Prints a spinning icon to the console
+	 * @param milliOffset
+	 */
+	public static void printLoadToConsole(int milliOffset) {
+		loading = true;
+		final Timer t = new Timer();
+		TimerTask task = new TimerTask() {
+			int loop = 0;
+			public void run() {
+				if (loading) {
+					loop++;
+					if (loop == 1) {
+						System.out.print("\b|");
+					}
+					if (loop == 2) {
+						System.out.print("\b/");
+					}
+					if (loop == 3) {
+						System.out.print("\b-");
+					}
+					if (loop == 4) {
+						System.out.print("\b\\");
+						loop = 0;
+					}
+				} else {
+					System.out.print("\b");
+					t.cancel();
+				}
+			}
+		};
+		t.schedule(task, 00, milliOffset);
+	}
+	
+	public static void stopLoading() {
+		loading = false;
 	}
 	
 }

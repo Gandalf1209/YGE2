@@ -44,5 +44,21 @@ public class Mathf {
 		dist = path(x, y);
 		return dist;
 	}
+	
+	public static Integer[] toIntegerObject(int[] intArray) {
+		Integer[] result = new Integer[intArray.length];
+		for (int i = 0; i < intArray.length; i++) {
+			result[i] = Integer.valueOf(intArray[i]);
+		}
+		return result;
+	}
+	
+	public static int[] toIntValue(Integer[] integerArray) {
+		int[] result = new int[integerArray.length];
+		for (int i = 0; i < integerArray.length; i++) {
+			result[i] = integerArray[i].intValue();
+		}
+		return result;
+	}
 
 }
