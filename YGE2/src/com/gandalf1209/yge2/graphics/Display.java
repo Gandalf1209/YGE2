@@ -2,14 +2,11 @@ package com.gandalf1209.yge2.graphics;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 import javax.swing.JComponent;
-import javax.swing.Timer;
 
 import com.gandalf1209.yge2.engine.Game;
 import com.gandalf1209.yge2.engine.Mesh;
@@ -17,14 +14,14 @@ import com.gandalf1209.yge2.engine.Scene;
 import com.gandalf1209.yge2.engine.Vector2;
 
 @SuppressWarnings("serial")
-public class Display extends JComponent implements ActionListener {
+public class Display extends JComponent {
 
 	private Window frame;
 
 	private Game game;
-	private Timer t;
 	private Scene s;
 	private GraphicsX g;
+	private boolean running = false;
 
 	public Display(String title, int x, int y, Game game) {
 		this.game = game;
@@ -43,16 +40,29 @@ public class Display extends JComponent implements ActionListener {
 	 * Starts the loop with a specified delay between frames.
 	 * @param time
 	 */
-	public void initTime(int time) {
-		t = new Timer(time, this);
-		t.start();
+	public void start(final int fps) {
+		Thread disp = new Thread("Display Thread") {
+			public void run() {
+				while (running) {
+					repaint();
+					game.update();
+					try {
+						Thread.sleep(1000/fps);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		};
+		running = true;
+		disp.start();
 	}
 	
 	/**
-	 * Stops the loop
+	 * Pauses the loop
 	 */
-	public void stopTime() {
-		t.stop();
+	public void pause() {
+		running = false;
 	}
 	
 	/**
@@ -116,17 +126,5 @@ public class Display extends JComponent implements ActionListener {
 	
 	public GraphicsX getGraphics() {
 		return g;
-	}
-
-	/**
-	 * What is run when the timer is active
-	 */
-	@Override
-	public void actionPerformed(ActionEvent e) {
-
-		repaint();
-
-		game.update();
-
 	}
 }
