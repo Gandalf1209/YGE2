@@ -110,6 +110,13 @@ public class Display extends JComponent {
 			renderMesh(gx);
 		}
 		game.render(gx);
+		for (int i = 0; i < Button.list.size(); i++) {
+			Button b = Button.list.get(i);
+			gx.setColor(b.getColor());
+			gx.fillRect(b.getX(), b.getY(), b.getW(), b.getH());
+			gx.setColor(gx.hex("#00000"));
+			g.drawString(b.getText(), b.getX() + 10, b.getY() + 5);
+		}
 	}
 	
 	
