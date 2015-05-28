@@ -19,6 +19,7 @@ public class GraphicsX extends Graphics {
 	private Graphics g;
 	private com.gandalf1209.yge2.graphics.Window w;
 	
+	public Color BG_COLOR;
 	public boolean DRAW_3D_BORDER = false;
 	public int OVERALL_SHADOW_OFFSET = 20;
 	public int RECT_DEPTH_OFFSET = 3;
@@ -84,10 +85,7 @@ public class GraphicsX extends Graphics {
 	}
 
 	public void setBGColor(Color bg) {
-		Color def = g.getColor();
-		g.setColor(bg);
-		g.fillRect(0, 0, w.getWidth(), w.getHeight());
-		g.setColor(def);
+		BG_COLOR = bg;
 	}
 
 	public void setBGImage(Image img) {

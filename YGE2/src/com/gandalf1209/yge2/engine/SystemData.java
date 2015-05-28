@@ -7,6 +7,6 @@ public class SystemData {
 	public static final String RUN_LOCATION = System.getProperty("user.dir");
 	public static final String USER_HOME = System.getProperty("user.home");
 	public static final String TEMP_FOLDER = System.getProperty("java.io.tmpdir");
-	public static final String YAMANU_VERSION = "2.2 - Pre-release - Patch #171";
+	public static final String YAMANU_VERSION = "2.2 - Pre-release - Patch #172";
 	
 }

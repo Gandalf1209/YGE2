@@ -1,6 +1,5 @@
 package com.gandalf1209.yge2.graphics;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseListener;
@@ -104,7 +103,7 @@ public class Display extends JComponent {
 		Vector2.verteces.clear();
 		GraphicsX gx = new GraphicsX(g, frame);
 		this.g = gx;
-		gx.setColor(Color.black);
+		gx.setColor(gx.BG_COLOR);
 		gx.fillRect(0, 0, frame.getWidth(), frame.getHeight());
 		if (s != null) {
 			renderMesh(gx);
