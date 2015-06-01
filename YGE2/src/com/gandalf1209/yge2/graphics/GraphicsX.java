@@ -29,6 +29,13 @@ public class GraphicsX extends Graphics {
 		this.w = w;
 	}
 	
+	public void drawCenteredXString(String text, int width, int y) {
+		FontMetrics met = g.getFontMetrics(g.getFont());
+		int x = (width - met.stringWidth(text)) / 2;
+		g.setFont(g.getFont());
+		g.drawString(text, x, y);
+	}
+	
 	public void drawGameObject(GameObject obj) {
 		Color prevColor = g.getColor();
 		Polygon p = new Polygon();
